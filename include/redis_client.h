@@ -9,5 +9,5 @@
 #pragma once
 
 class RedisClient {
-
+public:
 };

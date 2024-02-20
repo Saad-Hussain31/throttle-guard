@@ -8,6 +8,4 @@
 
 #pragma once
 
-class Rule {
-    
-};
+class Rule {};
