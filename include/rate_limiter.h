@@ -17,7 +17,7 @@ public:
   RateLimiter(RedisClient &redis_client);
   ~RateLimiter();
 
-  HttpResponse handle_request(const HttpRequest &request);
+  drogon::HttpRequestPtr handle_request(const drogon::HttpRequestPtr &request);
 
 private:
   RedisClient m_redis_client;
@@ -26,5 +26,5 @@ private:
   bool is_allowed(const std::string &domain,
                   const std::vector<std::string> &descriptors);
   void parse_config_file(const std::string &config_file);
-  void lograte_limited_request(const HttpRequest &request);
+  void lograte_limited_request(const drogon::HttpRequest &request);
 };
